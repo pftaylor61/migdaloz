@@ -1,0 +1,54 @@
+/*
+ Theme Name:   Migdal Oz
+ Theme URI:    https://oldcastleweb.com/themes/castlekitchen
+ Description:  Migdal Oz is a fully featured theme, built on the framework of the OCWS theme Qohelet. It was programmed from the Shutterbug theme. SPECIALNOTE: The Migdal Oz theme was programmed from the Shutterbug theme, which was obtained from <a title="Coffee Cup Software" href="https://themes.coffeecup.com/shutterbug.html">CoffeeCup Software</a>.
+ Author:       Old Castle web solutions
+ Author URI:   https://oldcastleweb
+ Version:      0.0.1
+ SpecialNote:  The Migdal Oz theme was programmed from the Shutterbug theme, which was obatined from CoffeeCup Software.
+ License:      GNU General Public License v3 or later
+ License URI:  http://www.gnu.org/licenses/gpl-3.0.html
+ Text Domain:  migdal-oz
+ Tags:
+*/
+/*
+    Most of the styles used in this theme are contained in stylesheets in the inc subfolder. These use bootstrap4 styles.
+    
+*/
+
+/* 
+==================
+Social Media icons 
+==================
+*/
+.social-media-icons {
+	margin-left: auto;
+        margin-right: auto;
+	height: auto;
+}
+
+.social-media-icons ul {
+	list-style: none;
+	margin: .5em 0 0 0;
+	padding: 0;
+}
+
+.social-media-icons li {
+	display: inline-block;
+	margin: 0.1em 0 0 0.6em;
+	font-size: 0.6rem;
+	text-align: left;
+}
+
+.social-media-icons a {
+	color: #333;
+	text-decoration: none;
+}
+
+.social-media-icons a:visited {
+	color: #333;
+}
+
+.social-media-icons a:hover, .social-media-icons a:active { 
+	color: #2997ab;
+}

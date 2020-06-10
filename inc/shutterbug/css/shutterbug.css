@@ -1,0 +1,102 @@
+/*
+This stylesheet contains the extra files created, in order to make this bootstrap theme work as a wordpress/classicpress theme
+*/
+/* 
+    Created on : May 16, 2020, 6:07:33 PM
+    Author     : pftay
+    Version     :0.0.1
+*/
+
+/*
+============
+Image Styles
+============
+*/
+
+.list-featured-image {
+    width: 80px;
+    width: 5.2rem;
+    height: 44px;
+    height: 3.0rem;
+    border-color: #000;
+    border-width: 4px;
+    border-width: 0.25rem;
+    float: left;
+    padding-right: 10px;
+}
+
+.mgdl_header_image {
+    float: left;
+    padding-right: 0.7rem;
+}
+
+a { 
+	color: #fff;
+	outline: none;
+        
+       
+}
+
+a:visited { 
+	color: #ddd;
+        
+}
+
+a:hover { 
+	text-decoration: underline;
+	
+}
+
+
+
+.site-content {
+    color:#ffe;
+}
+
+@media screen and (min-width: 75rem) {
+    .list-featured-image {
+        width: 100px;
+        width: 6.8rem;
+        height: 55px;
+        height: 3.7rem;
+        border-color: #000;
+        border-width: 5px;
+        border-width: 0.3rem;
+    }
+}
+
+/*
+* Pagination styles
+*/
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    color: #fff;
+    text-decoration:none;
+}
+ 
+.navigation li {
+    display: inline;
+}
+ 
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    background-color: #6FB7E9;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+}
+ 
+.navigation li a:hover,
+.navigation li.active a {
+    background-color: #3C8DC5;
+}
+
+#thearticle {
+    padding-left: 16px;
+    padding-left: 1rem;
+}
