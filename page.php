@@ -13,16 +13,31 @@
  */
 
 get_header(); ?>
-<div id="primary" class="container-grid text-container" role="main">
-    <div id="thearticle" class="container-grid text-inner col-9">
-        <?php         get_template_part('content', get_post_format()); ?>
-    </div>
-    
-    <div id="thesidebar" class="container-grid text-inner col-3">
-        <?php get_sidebar(); ?>
-    </div>
-    
-</div><!-- /#primary -->
+<div id="primary" class="site-content row" role="main">
+            
+			<div id="thearticle" class="container-grid text-inner col-8">
+
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'content', get_post_format() ); ?>
+
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() ) {
+						comments_template( '', true );
+					}
+					?>
+
+					<?php migdaloz_content_nav( 'nav-below' ); ?>
+
+				<?php endwhile; // end of the loop. ?>
+
+			</div> <!-- /#thearticle.container-grid.text-inner.col-8 -->
+			
+                            <?php get_sidebar(); ?>
+                        
+                       
+	</div> <!-- /#primary.site-content.row -->
   
 
 <?php

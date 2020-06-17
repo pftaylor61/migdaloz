@@ -29,6 +29,7 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
     <?php wp_head(); ?>
+    <title><?php echo bloginfo( 'name' ); ?></title>
     
   
   <script>document.createElement( "picture" );</script>

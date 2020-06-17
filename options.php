@@ -32,6 +32,13 @@ function optionsframework_options() {
 		'repeat' => 'repeat',
 		'position' => 'top left',
 		'attachment'=>'scroll' );
+        
+        // Logo Image Defaults
+        $logo_image_defaults = array(
+            'width' => '150',
+            'height' => '80',
+            'image' => $imagepath . 'inc/shutterbug/images/shutterbug_web.png'
+        );
 
 	// Editor settings
 	$wp_editor_settings = array(
@@ -282,6 +289,13 @@ function optionsframework_options() {
 		'name' =>  esc_html__( 'Home Header Background Image', 'migdaloz' ),
 		'desc' => esc_html__( 'Select a default image for the header, to be used just on the front oe home page.', 'migdaloz' ),
 		'id' => 'home_header_background_image',
+		'std' => $header_defaults,
+		'type' => 'upload' );
+        
+        $options[] = array(
+		'name' =>  esc_html__( 'Default Archive Featured Image', 'migdaloz' ),
+		'desc' => esc_html__( 'Select a default image for archive pages, such as searches, if there is no featured image set.', 'migdaloz' ),
+		'id' => 'default_mini_archive_image',
 		'std' => $header_defaults,
 		'type' => 'upload' );
         

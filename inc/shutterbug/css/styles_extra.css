@@ -694,8 +694,8 @@ select {
 	font-family: 'Tenor Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
 	font-weight: 700;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 20px;
+	font-size: 1.2rem;
 	line-height: 2;
 	text-transform: uppercase;
 }
@@ -917,7 +917,7 @@ select {
 }
 
 .entry-header h1 a:visited {
-	color: #333;
+	color: #eee;
 }
 
 .entry-header h1 a:hover {
@@ -974,7 +974,7 @@ article.sticky {
 }
 
 .header-meta a:visited {
-	color: #333;
+	color: #eee;
 }
 
 .header-meta a:hover {

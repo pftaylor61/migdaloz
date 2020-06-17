@@ -8,22 +8,26 @@
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <!-- checking new theme -->
+        <!-- checking new themme -->
+                
+            
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) { ?>
 			<div class="featured-post">
 				<?php esc_html_e( 'Featured post', 'migdaloz' ); ?>
 			</div>
-		<?php } ?>
+		<?php } 
+                    ?>
+                
 		<header class="entry-header">
-			<?php if ( is_single() ) { ?>
+			<?php if ( is_single() || is_page() ) { ?>
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php }
-			else { ?>
-				<h1 class="entry-title">
-					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( esc_html__( 'Permalink to ', 'migdaloz' ) . '%s', the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
-				</h1>
-			<?php } // is_single() ?>
-			<?php migdaloz_posted_on(); ?>
+			else { 
+                            echo "<div style=\"padding-left:24px; padding-left:1.5rem;\"".tst_post_featuredimage($mypostid)."</div>";
+                            ?>
+				<h2 style="font-size: 1.7rem !important;" class="less-top-pad"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			<?php } // is_single() || is_page() ?>
+			<?php // migdaloz_posted_on(); ?>
 			<?php if ( has_post_thumbnail() && !is_search() ) { ?>
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( esc_html__( 'Permalink to ', 'migdaloz' ) . '%s', the_title_attribute( 'echo=0' ) ) ); ?>">
 					<?php the_post_thumbnail( 'post_feature_full_width' ); ?>

@@ -1,52 +1,48 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The archive template file.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * This is the template file for making archive pages in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package Migdaloz
+ * @since Migdaloz 0.0.1
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="site-content row" role="main">
+            
+			<div id="thearticle" class="container-grid text-inner col-8">
 
-		<?php if ( have_posts() ) : ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+					<?php get_template_part( 'content', 'postarchives' ); ?>
 
-			<?php /* Start the Loop */ ?>
-			<div id="home-main" class="info-row container-grid">
-                            <div class="container-fluid info-container container-grid">
-                                <?php while ( $mynewquery->have_posts() ) : $mypostid = $mynewquery->the_post(); 
-                                        echo tst_post_featuredimage($mypostid);
-                                ?>
-        
-                                <h2 class="less-top-pad"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-      
-                                <p class="paragraph image-paragraph"><?php echo ocws_processstring(get_the_excerpt(),55); ?> <a href="<?php the_permalink(); ?>" style="text-decoration: underline">More</a></p><br />
-                            <?php      endwhile; ?>
-      
-                            </div>
-                                <?php migdaloz_numeric_posts_nav(); ?>
-                        </div>
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() ) {
+						comments_template( '', true );
+					}
+					?>
 
-			<?php the_posts_navigation(); ?>
+					<?php // migdaloz_content_nav( 'nav-below' ); ?>
 
-		<?php else : ?>
+				<?php endwhile; // end of the loop. ?>
 
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+			</div> <!-- /#thearticle.container-grid.text-inner.col-8 -->
+			
+                            <?php get_sidebar(); ?>
+                        
+                       
+	</div> <!-- /#primary.site-content.row -->
 
-		<?php endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php migdaloz_numeric_posts_nav(); ?>
+<?php get_footer(); 
+/*
+ * This is the end of the main page template
+ */
+?>
