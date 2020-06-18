@@ -7,10 +7,11 @@
 * Description:  Migdal Oz is a child theme of Qohelet
 * Author:       Old Castle web solutions
 * Author URI:   https://oldcastleweb
-* Version:      1.0.0
+* Version:      1.0.1
 * License:      GNU General Public License v3 or later
 * License URI:  http://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain:  migdaloz
+* GitHub Theme URI: https://github.com/pftaylor61/migdaloz
 * Tags:
 
     Migdal Oz - a WordPress or ClassicPress theme from Old Castle Web Solutions
