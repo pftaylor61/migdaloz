@@ -859,14 +859,17 @@ select {
 
 /* Social Media icons */
 .social-media-icons {
-	float: right;
+	margin-right: auto;
+	margin-left: auto;
 	height: auto;
+	color: #fff;
 }
 
 .social-media-icons ul {
 	list-style: none;
 	margin: .5em 0 0 0;
 	padding: 0;
+	color: #fff;
 }
 
 .social-media-icons li {
@@ -877,16 +880,16 @@ select {
 }
 
 .social-media-icons a {
-	color: #333;
+	color: #fff;
 	text-decoration: none;
 }
 
 .social-media-icons a:visited {
-	color: #333;
+	color: #fff;
 }
 
 .social-media-icons a:hover, .social-media-icons a:active { 
-	color: #2997ab;
+	color: #ddf;
 }
 
 

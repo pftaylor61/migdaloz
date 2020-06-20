@@ -315,6 +315,7 @@ body.body-1 {
 .rule hr {
   border-top-width: 3px;
   border-top-color: #fff;
+  width: auto;
 }
 
 .container-grid.header-container {

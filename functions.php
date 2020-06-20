@@ -83,24 +83,27 @@ if ( !function_exists('mgdloz_setup')) {
         // Enable support for WooCommerce
 		add_theme_support( 'woocommerce' );
         
+		// Enable support for Classic Commerce
+		add_theme_support( 'classic-commerce' );
+		
     } // end function mgdloz_setup
 }
 
 add_action( 'after_setup_theme', 'mgdloz_setup' );
-add_action( 'after_setup_theme', 'newcat_blobby' );
+add_action( 'after_setup_theme', 'newcat_book' );
 
-function newcat_blobby() {
+function newcat_book() {
     // Create the category
     // The function wp_insert_term is what produces a new category, without an error.
     $my_cat_id = wp_insert_term(
-                'Blobby',
+                'Book',
                 'category',
                 array(
-                    'description' => 'A Cool Category',
-                    'slug' => 'blobby'
+                    'description' => 'A Category to enable the production of a book, in chapter order.',
+                    'slug' => 'book'
                 )
             );
-}
+} // end function newcat_book
 
 // Enqueue parent/child themes styles with cachebusting for child theme styles built in
 add_action( 'wp_enqueue_scripts', 'mgdloz_enqueue_styles' );
