@@ -37,9 +37,8 @@
 
 
 <body class="body-1">
-  <header style="<?php echo home_header_background('regular'); ?>" class="container-grid page-title" id="general-page">
+  <header style="<?php echo home_header_background('shop'); ?>" class="container-grid page-title" id="general-page">
     <div class="container-grid nav">
-        
       <nav id="site-navigation" class="main-navigation" role="navigation">
             <h3 class="menu-toggle assistive-text"><?php esc_html_e( 'Menu', 'migdaloz' ); ?></h3>
             <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'qohelet' ); ?>"><?php esc_html_e( 'Skip to content', 'migdaloz' ); ?></a></div>

@@ -367,6 +367,13 @@ if ( !function_exists('home_header_background')) {
                 }
                 break;
                 
+            case 'shop':
+                $bg_url = of_get_option('webstore_background_image');
+                if (trim($bg_url)=="") {
+                $bg_url = trailingslashit( get_stylesheet_directory_uri() ).'inc/shutterbug/images/hikers.jpg';  
+                }
+                break;
+                
             default :
                 $bg_url = trailingslashit( get_stylesheet_directory_uri() ).'inc/shutterbug/images/dark-forest.jpg';  
                 
@@ -793,7 +800,7 @@ add_action( 'widgets_init', 'migdaloz_widgets_init' );
  */
 if ( !function_exists('migdaloz_is_woocommerce_active')) {
 function migdaloz_is_woocommerce_active() {
-	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || in_array( 'classic-commerce/classic-commerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 		return true;
 	}
 	else {
@@ -1094,3 +1101,11 @@ new backup_restore_theme_options();
  * End Section to save options
  * ===========================
  */
+
+/* New Image Sizes */
+if ( ! function_exists('oc_newimagesizes')) {
+    function oc_newimagesizes() {
+        add_image_size('featured300', 300, 170, true);
+    } // end function oc_newimagesizes
+} // end test for function oc_newimagesizes
+add_action('init', 'oc_newimagesizes');

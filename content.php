@@ -29,9 +29,11 @@
 			<?php } // is_single() || is_page() ?>
 			<?php // migdaloz_posted_on(); ?>
 			<?php if ( has_post_thumbnail() && !is_search() ) { ?>
-				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( esc_html__( 'Permalink to ', 'migdaloz' ) . '%s', the_title_attribute( 'echo=0' ) ) ); ?>">
-					<?php the_post_thumbnail( 'post_feature_full_width' ); ?>
-				</a>
+                                <div id="oc_featured_image_container" class="featured_image_right">
+                                    <a href="<?php the_post_thumbnail_url('full'); ?>">
+					<?php the_post_thumbnail( 'featured300', array('alt' => 'Featured Image', 'title' => 'Featured Image') ); ?>
+                                    </a>
+                                </div><!-- /#oc_featured_image_container.featured_image_left -->
 			<?php } ?>
 		</header> <!-- /.entry-header -->
 

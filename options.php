@@ -354,8 +354,35 @@ function optionsframework_options() {
 
 	if( migdaloz_is_woocommerce_active() ) {
 		$options[] = array(
-		'name' => esc_html__( 'WooCommerce settings', 'migdaloz' ),
+		'name' => esc_html__( 'Webstore Settings', 'migdaloz' ),
 		'type' => 'heading' );
+                
+                $webstore_plugin = "";
+                if (in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) )) {
+                    $webstore_plugin = "Woocommerce";
+                } else {
+                    if (in_array( 'classic-commerce/classic-commerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) )) {
+                        $webstore_plugin = "Classic Commerce";
+                    }
+                }
+                
+                if ($webstore_plugin == "") {
+                    $webstore_plugin = "There is no webstore plugin installed.";                 
+                } else {
+                    $webstore_plugin = "The webstore plugin installed in this site is **".$webstore_plugin."**.";
+                }
+                
+                $options[] = array(
+		'name' => esc_html__( 'Webstore Plugin', 'migdaloz' ),
+		'desc' => esc_html__( $webstore_plugin, 'migdaloz' ),
+		'type' => 'info' );
+                
+                $options[] = array(
+		'name' =>  esc_html__( 'Webstore Header Background Image', 'migdaloz' ),
+		'desc' => esc_html__( 'Select a default image for the header, to be used on webstore pages.', 'migdaloz' ),
+		'id' => 'webstore_background_image',
+		'std' => $header_defaults,
+		'type' => 'upload' );
 
 		$options[] = array(
 			'name' => esc_html__('Shop sidebar', 'migdaloz'),
@@ -392,7 +419,7 @@ function optionsframework_options() {
 			'class' => 'mini',
 			'options' => $shop_products_settings );
 
-	}
+	} // end of test to see if Woocommerce or Classic Commerce is active
 
 	return $options;
 }

@@ -21,7 +21,7 @@ body { margin: 0; font-size: 16px; font-size: 1rem; line-height: 1.5; }
 
 a { color: #333; text-decoration: underline; }
 a:visited { color: #666; }
-a:hover { color: #b40101; }
+/* a:hover { color: #b40101; } */
 
 menu { padding: 0; }
 
@@ -1932,7 +1932,7 @@ li span.dots {
 .main-small-navigation a, .main-navigation a {
 	display: block;
 	text-decoration: none;
-	color: #333; /* Nav bar link color */
+	color: #fff; /* Nav bar link color */
 }
 
 .main-navigation ul ul {
@@ -1960,7 +1960,7 @@ li span.dots {
 }
 
 .main-navigation li:hover > a {
-	color: #2997ab; /* Nav bar link color on hover */
+	/* color: #2997ab; */ /* Nav bar link color on hover */
 }
 
 .main-navigation ul ul :hover > a {
@@ -1985,7 +1985,15 @@ li span.dots {
 .main-navigation .current_page_item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current_page_parent > a {
-	color: #2997ab; /* Nav bar link color for current menu item or ancestor */
+	color: rgb(240,248,255); /* Nav bar link color for current menu item or ancestor */
+}
+
+.main-navigation .current-menu-item > a::after,
+.main-navigation .current-menu-ancestor > a::after,
+.main-navigation .current_page_item > a::after,
+.main-navigation .current_page_ancestor > a::after,
+.main-navigation .current_page_parent > a::after {
+	content: "*"; /* Producing a * after the current page link */
 }
 
 .main-navigation ul .divider {
@@ -2064,7 +2072,7 @@ h1.page-title {
 	font-family: 'Kreon', Georgia, "Times New Roman", Times, serif;
 	font-style: normal;
 	font-weight: 400;
-	color: #333;
+	color: rgb(240,248,255);
 	margin-top: 0;
 }
 
