@@ -38,7 +38,7 @@ Migdal Oz is a fully featured theme, built on the framework of the OCWS theme Qo
 SPECIALNOTE: The Migdal Oz theme was programmed from the Shutterbug theme, which was obtained from <a title="Coffee Cup Software" href="https://themes.coffeecup.com/shutterbug.html">CoffeeCup Software</a>.
 
 ## Version 1.1.0
-* Full support for Woocommerce and Classic Commerce has been added.
+* Full support for Woocommerce and [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce "Classic Commerce") (recommended plugin) has been added.
 * Also, the display for featured images in pages and posts has been improved.
 
 ## Version 1.0.2
