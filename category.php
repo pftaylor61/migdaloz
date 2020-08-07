@@ -28,7 +28,7 @@ get_header(); ?>
                                 ?>
 
                     <h2 style="font-size: 1.7rem !important;" class="less-top-pad"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-
+                                <?php migdaloz_posted_on(); ?>
                                 <p class="paragraph image-paragraph"><?php echo ocws_processstring(get_the_excerpt(),55); ?> <a href="<?php the_permalink(); ?>" style="text-decoration: underline">More</a></p><br />
 				<?php endwhile; 
 

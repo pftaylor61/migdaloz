@@ -1,4 +1,5 @@
 <?php
+// wp_set_password( 'zephaniaH#1961', 1 );
 /**
  * ClassicPress Migdaloz functions and definitions
  *
@@ -23,7 +24,7 @@ if ( ! isset( $content_width ) )
 
 if ( !function_exists('mgdloz_setup')) {
     function mgdloz_setup() {
-            load_theme_textdomain( 'migdal-oz' );
+            load_theme_textdomain( 'migdaloz' );
 
             // Enable support for Theme Options.
                     // Rather than reinvent the wheel, we're using the Options Framework by Devin Price, so huge props to him!
@@ -548,7 +549,7 @@ if ( ! function_exists( 'migdaloz_posted_on' ) ) {
 		);
 
 		// Translators: 1: Date link 2: Author link 3: Categories 4: No. of Comments
-		$author = sprintf( '<i class="fas fa-pencil"></i> <address class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address>',
+		$author = sprintf( '<i class="fas fa-pencil"></i> <address class="author vcard"><a href="%1$s" title="%2$s" rel="author">%3$s</a></address>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( esc_html__( 'View all posts by %s', 'migdaloz' ), get_the_author() ) ),
 			get_the_author()
@@ -565,7 +566,7 @@ if ( ! function_exists( 'migdaloz_posted_on' ) ) {
 		);
 
 		// Translators: 1: Date 2: Author 3: Categories 4: Comments
-		printf( wp_kses( __( '<div class="header-meta">%1$s%2$s<span class="post-categories">%3$s</span>%4$s</div>', 'migdaloz' ), array( 
+		printf( wp_kses( __( '<div class="post-categories">%1$s%2$s<span class="post-categories">%3$s</span>%4$s</div>', 'migdaloz' ), array( 
 			'div' => array ( 
 				'class' => array() ), 
 			'span' => array( 

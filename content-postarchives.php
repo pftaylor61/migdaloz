@@ -14,6 +14,7 @@
 		</header>
 	<?php } ?>
 	<div class="entry-content">
+                <?php migdaloz_posted_on(); ?>
 		<?php the_excerpt(); ?>
 
 		<h2><?php esc_html_e( 'Archives by Category', 'migdaloz' ); ?></h2>

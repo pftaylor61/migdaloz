@@ -999,6 +999,7 @@ article.sticky {
 .entry-content:after { clear: both; }
 
 .post-categories a,
+.author a,
 .post-tags a {
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -1021,6 +1022,10 @@ article.sticky {
 .post-tags a:hover {
 	background-color: #2997ab;
 	color: #fff;
+}
+
+.entry-date {
+    display: inline !important;
 }
 
 .entry-header address,

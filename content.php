@@ -27,7 +27,7 @@
                             ?>
 				<h2 style="font-size: 1.7rem !important;" class="less-top-pad"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<?php } // is_single() || is_page() ?>
-			<?php // migdaloz_posted_on(); ?>
+			<?php migdaloz_posted_on(); ?>
 			<?php if ( has_post_thumbnail() && !is_search() ) { ?>
                                 <div id="oc_featured_image_container" class="featured_image_right">
                                     <a href="<?php the_post_thumbnail_url('full'); ?>">
