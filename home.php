@@ -118,6 +118,7 @@ if (test_for_page1()) {
 		'offset'=>$numfeatured,
                 'posts_per_page'=>5,
                 'ignore_sticky_posts'=>true,
+                'cat'=>-3,
 	);
   if (test_for_page1()) {
     $mynewquery = new WP_Query($args);
@@ -129,9 +130,20 @@ if (test_for_page1()) {
     <div class="container-fluid info-container container-grid">
         <?php while ( have_posts() ) : $mypostid = the_post(); 
              echo tst_post_featuredimage($mypostid);
+             if(get_post_format()=='aside') {
+                 $mycategories_list = get_the_category_list( esc_html__( ' ', 'migdaloz' ) );
+                 $myposttitle = '*aside '.$mycategories_list;
+                 ?>
+        <h2 class="less-top-pad"><a href="<?php the_permalink(); ?>"><?php echo $myposttitle; ?></a></h2>
+        <?php
+             } else {
+                 ?>
+        <h2 class="less-top-pad"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h2>
+        <?php
+             }
         ?>
         
-        <h2 class="less-top-pad"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        
         <?php migdaloz_posted_on(); ?>
       
         <p class="paragraph image-paragraph"><?php echo ocws_processstring(get_the_excerpt(),55); ?> <a href="<?php the_permalink(); ?>" style="text-decoration: underline">More</a></p><br />

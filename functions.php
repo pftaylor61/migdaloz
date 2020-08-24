@@ -1,7 +1,7 @@
 <?php
 // wp_set_password( 'zephaniaH#1961', 1 );
 /**
- * ClassicPress Migdaloz functions and definitions
+ * ClassicPress Migdaloz functtions and definitions
  *
  * 
  * @package ClassicPress
@@ -86,6 +86,9 @@ if ( !function_exists('mgdloz_setup')) {
         
 		// Enable support for Classic Commerce
 		add_theme_support( 'classic-commerce' );
+                
+                // This theme supports a variety of post formats
+		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 		
     } // end function mgdloz_setup
 }
@@ -279,6 +282,7 @@ function migdaloz_get_featured_posts($num_featured) {
 	$args = array(
 		'posts_per_page' => $count,
 		'post__in' => $sticky,
+                'cat' => -26,
 		
 	);
 
@@ -405,6 +409,8 @@ if (!function_exists('tst_post_featuredimage')) {
         
         if (has_post_thumbnail($tst_postid)){ 
             $tst_imageurl = wp_get_attachment_image_url(get_post_thumbnail_id($tst_postid),'thumbnail');
+        } else if (get_post_format($tst_postid)=='aside'){
+            $tst_imageurl = get_stylesheet_directory_uri().'/assets/featured_image_aside.png';
         } else if (trim($logo_url)!="") {
             $tst_imageurl = of_get_option('default_mini_archive_image');
         } else {
