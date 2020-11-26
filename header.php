@@ -63,6 +63,7 @@
         <div class="rule">
           <hr>
         </div>
+        <p class="paragraph introduction-p"><em>&ldquo;<?php echo of_get_option('header_verse'); ?>&rdquo;</em></p>
         <p class="paragraph introduction-p"><?php echo get_bloginfo( 'description' ); ?></p>
       </header>
     </div>

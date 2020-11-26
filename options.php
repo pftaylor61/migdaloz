@@ -300,6 +300,12 @@ function optionsframework_options() {
 		'type' => 'upload' );
         
         $options[] = array(
+		'name' => esc_html__( 'Header Verse', 'migdaloz' ),
+		'desc' => esc_html__( 'Type a Bible Verse to appear in the Header', 'migdaloz' ),
+		'id' => 'header_verse',
+		'type' => 'text' );
+        
+        $options[] = array(
 		'name' => esc_html__( 'Frontpage Settings', 'migdaloz' ),
 		'type' => 'heading' );
         
@@ -349,6 +355,8 @@ function optionsframework_options() {
 		'id' => 'art6_background_image',
 		'std' => $header_defaults,
 		'type' => 'upload' );
+        
+        
          
        
 

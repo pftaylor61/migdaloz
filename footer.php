@@ -20,11 +20,12 @@ $footer_root_url = trailingslashit( get_stylesheet_directory_uri() );
      */
     ?>
       
+    
+  </div>
+<div id="footer_credits" class="container-grid copyright">
     <div class="social-media-icons">
             <?php echo migdaloz_get_social_media(); ?>
     </div>
-  </div>
-<div id="footer_credits" class="container-grid copyright">
     <p class="paragraph footer-fine-print"><br>
     <?php 
         $mgdlz_footer_content = of_get_option('footer_content');

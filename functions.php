@@ -115,8 +115,12 @@ add_action( 'wp_enqueue_scripts', 'mgdloz_enqueue_styles' );
 function mgdloz_enqueue_styles() {
         $mycurtheme = wp_get_theme();
                 
+        wp_register_style('fontawesome', trailingslashit( get_stylesheet_directory_uri() ).'inc/fontawesome/css/all.css', array(), '5.15.1.1', 'all' );
+	wp_enqueue_style( 'fontawesome' );
+        
         wp_register_style('styles_extra', trailingslashit( get_stylesheet_directory_uri() ).'inc/shutterbug/css/styles_extra.css', array(), '0.0.1', 'all' );
 	wp_enqueue_style( 'styles_extra' );
+        
 
 	wp_enqueue_style(
 		'migdal-oz',

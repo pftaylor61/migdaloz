@@ -39,9 +39,10 @@
 <body class="body-1">
   <header style="<?php echo home_header_background('home'); ?>" class="container-grid header" id="home">
     <div class="container-grid nav">
+        
         <nav id="site-navigation" class="main-navigation" role="navigation">
             <h3 class="menu-toggle assistive-text"><?php esc_html_e( 'Menu', 'migdaloz' ); ?></h3>
-            <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'qohelet' ); ?>"><?php esc_html_e( 'Skip to content', 'migdaloz' ); ?></a></div>
+            <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'migdaloz' ); ?>"><?php esc_html_e( 'Skip to content', 'migdaloz' ); ?></a></div>
             
             <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
         </nav> <!-- /.site-navigation.main-navigation -->
@@ -62,7 +63,10 @@
         <div class="rule">
           <hr>
         </div>
+        <p class="paragraph introduction-p"><em>&ldquo;<?php echo of_get_option('header_verse'); ?>&rdquo;</em></p>
         <p class="paragraph introduction-p"><?php echo get_bloginfo( 'description' ); ?></p>
+        
+        
         <!-- <a class="link-button btn btn-outline-primary btn-lg" href="about.html">The Artist<br></a> -->
       </header>
     </div>
