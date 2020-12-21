@@ -211,6 +211,22 @@ function optionsframework_options() {
 		'std' => '',
                 'fawe' => 'fa-rss',
 		'type' => 'text' );
+        
+        $options[] = array(
+		'name' => esc_html__( 'Podcast1', 'migdaloz' ),
+		'desc' => esc_html__( 'Enter your Podcast1 RSS Feed URL.', 'migdaloz' ),
+		'id' => 'podcast1',
+		'std' => '',
+                'fawe' => 'fa-podcast',
+		'type' => 'text' );
+        
+        $options[] = array(
+		'name' => esc_html__( 'Podcast2', 'migdaloz' ),
+		'desc' => esc_html__( 'Enter your Podcast2 RSS Feed URL.', 'migdaloz' ),
+		'id' => 'podcast2',
+		'std' => '',
+                'fawe' => 'fa-podcast',
+		'type' => 'text' );
 
 	$options[] = array(
 		'name' => esc_html__( 'Advanced Settings', 'migdaloz' ),

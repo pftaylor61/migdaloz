@@ -7,7 +7,7 @@
 * Description:  Migdal Oz is a child theme of Qohelet
 * Author:       Old Castle web solutions
 * Author URI:   https://oldcastleweb
-* Version:      1.3.1
+* Version:      1.4
 * License:      GNU General Public License v3 or later
 * License URI:  http://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain:  migdaloz
@@ -36,6 +36,9 @@
 Migdal Oz is a fully featured theme, built on the framework of the OCWS theme Qohelet. It was programmed from the Shutterbug theme. 
 
 SPECIALNOTE: The Migdal Oz theme was programmed from the Shutterbug theme, which was obtained from <a title="Coffee Cup Software" href="https://themes.coffeecup.com/shutterbug.html">CoffeeCup Software</a>.
+
+## Version 1.4
+The social media options have been amended to include two podcast links.
 
 ## Version 1.3.1
 * It turned out that FontAwesome had not been added to the theme before. So this version now contains FontAwesome 5.15.1.1, which is my amendment of v. 5.15.1.

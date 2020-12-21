@@ -13,6 +13,8 @@ get_header('home');
 /*
  * Test for the whole home page section
  */
+$fposts = array();
+
 if (test_for_page1()) {
     
 ?>
@@ -28,7 +30,8 @@ if (test_for_page1()) {
         
 		
 			<!-- code for the main featured article, number 1 -->
-			<a href="<?php the_permalink(); ?>" class="link-container overlay-container" id="item-1">
+                        <?php // $fposts[1] = the_title(); ?>
+                        <a href="<?php the_permalink(); ?>" class="link-container overlay-container" id="item-1">
                         <h2 class="image-heading"><?php the_title(); ?></h2>
                         <div class="rule thin-row"><hr></div><p class="paragraph image-paragraph"><?php echo ocws_processstring(get_the_excerpt(),100); ?></p></a>
 
@@ -42,6 +45,7 @@ if (test_for_page1()) {
         
 		
 			<!-- code for the main featured article, number 2 -->
+                        <?php // $fposts[2] = the_title(); ?>
 			<a href="<?php the_permalink(); ?>" class="link-container overlay-container" id="item-2">
                         <h2 class="image-heading"><?php the_title(); ?></h2>
                         <div class="rule thin-row"><hr></div><p class="paragraph image-paragraph"><?php echo ocws_processstring(get_the_excerpt(),100); ?></p></a>
@@ -58,6 +62,7 @@ if (test_for_page1()) {
     <div <?php echo home_panel_background($mypostid,3); ?>class="background-image container-grid" id="image-3">
 		
 			<!-- code for the main featured article, number 3 -->
+                        <?php // $fposts[3] = the_title(); ?>
 			<a href="<?php the_permalink(); ?>" class="link-container overlay-container" id="item-3">
                         <h2 class="image-heading"><?php the_title(); ?></h2>
                         <div class="rule thin-row"><hr></div><p class="paragraph image-paragraph"><?php echo ocws_processstring(get_the_excerpt(),100); ?></p></a>
@@ -71,6 +76,7 @@ if (test_for_page1()) {
     <div <?php echo home_panel_background($mypostid,4); ?>class="background-image container-grid" id="image-4">
 		
 			<!-- code for the main featured article, number 4 -->
+                        <?php // $fposts[4] = the_title(); ?>
 			<a href="<?php the_permalink(); ?>" class="link-container overlay-container" id="item-4">
                         <h2 class="image-heading"><?php the_title(); ?></h2>
                         <div class="rule thin-row"><hr></div><p class="paragraph image-paragraph"><?php echo ocws_processstring(get_the_excerpt(),100); ?></p></a>
@@ -88,6 +94,7 @@ if (test_for_page1()) {
     <div <?php echo home_panel_background($mypostid,5); ?>class="background-image container-grid" id="image-5">
 		
 			<!-- code for the main featured article, number 5 -->
+                        <?php // $fposts[5] = the_title(); ?>
 			<a href="<?php the_permalink(); ?>" class="link-container overlay-container" id="item-5">
                         <h2 class="image-heading"><?php the_title(); ?></h2>
                         <div class="rule thin-row"><hr></div><p class="paragraph image-paragraph"><?php echo ocws_processstring(get_the_excerpt(),100); ?></p></a>
@@ -101,6 +108,7 @@ if (test_for_page1()) {
     <div <?php echo home_panel_background($mypostid,6); ?>class="background-image container-grid" id="image-6">
 		
 			<!-- code for the main featured article, number 6 -->
+                        <?php // $fposts[6] = the_title(); ?>
 			<a href="<?php the_permalink(); ?>" class="link-container overlay-container" id="item-6">
                         <h2 class="image-heading"><?php the_title(); ?></h2>
                         <div class="rule thin-row"><hr></div><p class="paragraph image-paragraph"><?php echo ocws_processstring(get_the_excerpt(),100); ?></p></a>
@@ -129,6 +137,7 @@ if (test_for_page1()) {
   <div id="home-main" class="info-row container-grid">
     <div class="container-fluid info-container container-grid">
         <?php while ( have_posts() ) : $mypostid = the_post(); 
+            // if ( in_array(the_title(),$fposts)==false) {
              echo tst_post_featuredimage($mypostid);
              if(get_post_format()=='aside') {
                  $mycategories_list = get_the_category_list( esc_html__( ' ', 'migdaloz' ) );
@@ -147,6 +156,7 @@ if (test_for_page1()) {
         <?php migdaloz_posted_on(); ?>
       
         <p class="paragraph image-paragraph"><?php echo ocws_processstring(get_the_excerpt(),55); ?> <a href="<?php the_permalink(); ?>" style="text-decoration: underline">More</a></p><br />
+           <?php  // } // end test to see if post in featured area above ?>
       <?php      endwhile; ?>
       
     </div>

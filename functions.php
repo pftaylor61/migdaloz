@@ -704,7 +704,11 @@ if ( ! function_exists( 'migdaloz_get_social_media' ) ) {
 			array( 'url' => of_get_option( 'social_instagram', '' ), 'icon' => 'fab fa-instagram', 'title' => esc_html__( 'Follow me on Instagram', 'migdaloz' ) ),
 			array( 'url' => of_get_option( 'social_flickr', '' ), 'icon' => 'fab fa-flickr', 'title' => esc_html__( 'Connect with me on Flickr', 'migdaloz' ) ),
 			array( 'url' => of_get_option( 'social_pinterest', '' ), 'icon' => 'fab fa-pinterest', 'title' => esc_html__( 'Follow me on Pinterest', 'migdaloz' ) ),
-			array( 'url' => of_get_option( 'social_rss', '' ), 'icon' => 'fas fa-rss', 'title' => esc_html__( 'Subscribe to my RSS Feed', 'migdaloz' ) )
+			array( 'url' => of_get_option( 'social_rss', '' ), 'icon' => 'fas fa-rss', 'title' => esc_html__( 'Subscribe to my RSS Feed', 'migdaloz' ) ),
+		
+                        array( 'url' => of_get_option( 'podcast1', '' ), 'icon' => 'fas fa-podcast', 'title' => esc_html__( 'Subscribe to Podcast 1', 'migdaloz' ) ),
+		
+                        array( 'url' => of_get_option( 'podcast2', '' ), 'icon' => 'far fa-podcast', 'title' => esc_html__( 'Subscribe to Podcast 2', 'migdaloz' ) )
 		);
 
 		foreach ( $icons as $key ) {
@@ -785,6 +789,47 @@ function migdaloz_widgets_init() {
 			'name' => esc_html__( 'Fourth Front Page Widget Area', 'migdaloz' ),
 			'id' => 'sidebar-homepage4',
 			'description' => esc_html__( 'Appears only in the footer of the home page', 'qohelet' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
+        
+        // these next four are for widgets to be placed at the top of the homepage
+                register_sidebar( array(
+			'name' => esc_html__( 'First Home Page Top Widget Area', 'migdaloz' ),
+			'id' => 'sidebar-homepagetop1',
+			'description' => esc_html__( 'Appears only at the top of the home page', 'migdaloz' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
+
+	register_sidebar( array(
+			'name' => esc_html__( 'Second Home Page Top Widget Area', 'migdaloz' ),
+			'id' => 'sidebar-homepagetop2',
+			'description' => esc_html__( 'Appears only at the top of the home page', 'migdaloz' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
+
+	register_sidebar( array(
+			'name' => esc_html__( 'Third Home Page Top Widget Area', 'migdaloz' ),
+			'id' => 'sidebar-homepagetop3',
+			'description' => esc_html__( 'Appears only at the top of the home page', 'migdaloz' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
+
+	register_sidebar( array(
+			'name' => esc_html__( 'Fourth Home Page Top Widget Area', 'migdaloz' ),
+			'id' => 'sidebar-homepagetop4',
+			'description' => esc_html__( 'Appears only at the top of the home page', 'migdaloz' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
